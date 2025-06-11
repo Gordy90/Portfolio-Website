@@ -3,39 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | GraphixbyGordy</title>
+  <meta name="description" content="Byron Smithson - Creative web developer combining real-world experience with modern design">
+  <title>GraphixbyGordy | Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script defer src="js/main.js"></script>
 </head>
-<body>
-  <!-- ...existing code for sticky navbar... -->
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">GraphixbyGordy</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+<body id="body" class="overflow-x-hidden">
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Sticky Navigation -->
+  <header class="navbar-container">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-wrapper">
+        <a href="#home" class="logo" aria-label="GraphixbyGordy Home">
+          <span class="logo-text">GraphixbyGordy</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+          <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </button>
+      </div>
     </nav>
   </header>
+
+  <!-- Main Content -->
   <main>
-    <section class="hero animate-fadein" style="max-width: 1000px; margin: 0 auto;">
-      <div class="hero-content" style="font-size: 1.35rem; max-width: 600px;">
-        <!-- Profile picture removed -->
-        <h1 style="font-size: 2.5rem;">Hello, I'm <span class="highlight">Byron</span></h1>
-        <p class="bio" style="font-size: 1.15rem;">I'm new to web development, but I'm excited to jump in and start creating. Even though I'm just beginning this journey, I bring a ton of experience from different industries. I've worked in team management, project management, security, customer support, and retail, you name it, I've probably done it.
-    Now, I'm combining all that real-world experience with my passion for building things online. I'm open to working with any industry and love the idea of creating websites that are not only functional but also make a real impact.
-    This is just the beginning, and I'm excited to see where this path takes me!</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section section-container">
+      <div class="hero-bg"></div>
+      <div class="hero-content fade-in">
+        <h1 class="hero-title">
+          Hello, I'm <span class="highlight">Byron</span>
+        </h1>
+        <p class="hero-subtitle">
+          Creative web developer crafting exceptional digital experiences with real-world expertise
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
       </div>
     </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section-container">
+      <div class="container">
+        <h2 class="section-title fade-in">Featured Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card fade-in" data-aos="fade-up">
+            <div class="project-image">
+              <img src="images/petfost.png" alt="Pet Fostering CTA Project Screenshot" loading="lazy" />
+              <div class="project-overlay">
+                <a href="https://gordy90.github.io/01-pet-fostering-cta/" target="_blank" class="project-link" aria-label="View Pet Fostering CTA project">
+                  <span>View Project</span>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Pet Fostering CTA</h3>
+              <p>A responsive call-to-action website designed to connect users with local pet shelters and encourage fostering.</p>
+              <ul class="tech-stack">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+          </article>
+          <!-- Additional project cards can be added here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-container">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-image fade-in">
+            <img src="images/WhatsApp Image 2025-05-24 at 15.08.47_b2915f52.jpg" alt="Professional headshot of Byron Smithson" class="headshot" loading="lazy"/>
+          </div>
+          <div class="about-text fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="divider"></div>
+            <p class="about-description">
+              I'm passionate about web development and excited to create meaningful digital experiences. 
+              With extensive background in team leadership, project management, security, and customer support, 
+              I bring a unique perspective to building functional and beautiful websites.
+            </p>
+            <h3>Skills & Technologies</h3>
+            <div class="skills-container">
+              <div class="skill-item" data-skill="HTML5">HTML5</div>
+              <div class="skill-item" data-skill="CSS3">CSS3</div>
+              <div class="skill-item" data-skill="JavaScript">JavaScript</div>
+              <div class="skill-item" data-skill="React">React</div>
+              <div class="skill-item" data-skill="Node.js">Node.js</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-container">
+      <div class="container">
+        <h2 class="section-title fade-in">Let's Work Together</h2>
+        <div class="contact-content">
+          <form class="contact-form fade-in" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required aria-describedby="name-error"/>
+              <span class="error-message" id="name-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required aria-describedby="email-error"/>
+              <span class="error-message" id="email-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+              <span class="error-message" id="message-error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loader"></span>
+            </button>
+          </form>
+          <div class="contact-info fade-in">
+            <div class="contact-item">
+              <h3>Get In Touch</h3>
+              <p>Ready to bring your ideas to life? Let's discuss your next project.</p>
+            </div>
+            <div class="social-links">
+              <!-- Social links will be added here -->
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2024 Byron Smithson. All rights reserved.</p>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Byron Smithson. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
